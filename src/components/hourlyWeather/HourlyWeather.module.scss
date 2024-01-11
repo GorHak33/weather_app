@@ -1,0 +1,21 @@
+.hourlyWeather {
+  width: 40%;
+  height: 100vh;
+  background-color: purple;
+
+  .hourlyEntry {
+    padding: 10px;
+    background-color: lightblue;
+    width: fit-content;
+    // border-radius: 8px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid black;
+    text-align: center;
+    width: max-content;
+
+    p {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  color: white;
+
+  .centeredDiv {
+    margin-right: 28%;
+  }
+
+  input[type="text"] {
+    flex: 1; /* Use all available space */
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    margin-right: 10px;
+  }
+
+  button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    background-color: #fff;
+    color: purple;
+  }
+
+  .unitheckbox {
+    display: flex;
+    align-items: center;
+
+    label {
+      display: flex;
+      align-items: center;
+
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+    }
+  }
+}
