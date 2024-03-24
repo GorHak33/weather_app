@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Search.module.scss";
 
 interface SearchProps {
@@ -8,6 +8,10 @@ interface SearchProps {
 const Search: React.FC<SearchProps> = ({ onSearch }) => {
   const [city, setCity] = useState("");
   const [unit, setUnit] = useState("metric");
+
+  useEffect(() => {
+    onSearch(city, unit);
+  }, [unit]);
 
   const handleSearch = () => {
     onSearch(city, unit);

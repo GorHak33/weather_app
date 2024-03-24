@@ -13,8 +13,6 @@ const HourlyWeather: React.FC<HourlyWeatherProps> = ({ params }) => {
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const data = useSelector((state: any) => state.forecastWeatherSlice?.data);
 
-  console.log(data?.list);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -38,17 +36,20 @@ const HourlyWeather: React.FC<HourlyWeatherProps> = ({ params }) => {
     return [];
   };
   const filteredData = filterTodayData();
-  console.log("filtered", filteredData);
 
   return (
     <div className={styles.hourlyWeather}>
       <h2>Hourly Weather Component</h2>
-      <div>
+      <div className={styles.hourlyWeatherBlock}>
         {filteredData.map((entry: any) => (
           <div className={styles.hourlyEntry} key={entry.dt}>
             <p>Time: {new Date(entry.dt_txt).toLocaleTimeString()}</p>
-            <p>Temperature: {entry.main.temp}°C</p>
+            <p>Temperature: {entry.main.temp}°</p>
             <p>Weather: {entry.weather[0].description}</p>
+            <img
+              src={`https://openweathermap.org/img/wn/${entry?.weather[0]?.icon}.png`}
+              alt=""
+            />
           </div>
         ))}
       </div>

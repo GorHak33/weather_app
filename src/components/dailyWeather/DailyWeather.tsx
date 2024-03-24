@@ -28,7 +28,7 @@ const DailyWeather: React.FC = () => {
       return (
         <div key={date} className={styles.dailyBox}>
           <h1>{date}</h1>
-          <h2>{temperature}°C</h2>
+          <h2>Temparture: {temperature}°</h2>
         </div>
       );
     });

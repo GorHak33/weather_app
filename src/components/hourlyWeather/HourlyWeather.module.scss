@@ -1,21 +1,57 @@
 .hourlyWeather {
-  width: 40%;
-  height: 100vh;
-  background-color: purple;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+
+  h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+  }
+
+  .hourlyWeatherBlock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
   .hourlyEntry {
-    padding: 10px;
-    background-color: lightblue;
-    width: fit-content;
-    // border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     margin: 10px;
     text-align: center;
-    border: 1px solid black;
-    text-align: center;
-    width: max-content;
+    width: calc(
+      100% / 3 - 20px
+    ); /* Adjust the width based on the number of blocks per row */
+    max-width: 250px;
 
     p {
-      margin: 0;
+      margin: 5px 0;
+      font-size: 16px;
+      color: #555;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hourlyEntry {
+      width: calc(100% / 2 - 20px); /* Adjust the width for smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hourlyEntry {
+      width: calc(100% - 20px); /* Adjust the width for mobile screens */
     }
   }
 }
